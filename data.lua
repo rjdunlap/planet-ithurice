@@ -195,6 +195,7 @@ local ithurice =
     starmap_icon = "__planet-ithurice__/graphics/planet-ithurice.png",
     starmap_icon_size = 512,
     magnitude = aquilo.magnitude,
+    subgroup = "planets",
     platform_procession_set =
     {
       arrival = {"planet-to-platform-b"},
