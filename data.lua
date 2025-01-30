@@ -447,7 +447,7 @@ PlanetsLib.borrow_music(data.raw["planet"]["aquilo"], ithurice)
 data:extend {{
     type = "technology",
     name = "planet-discovery-ithurice",
-    icons = util.technology_icon_constant_planet("__planet-ithurice__/graphics/planet-ithurice.png"),
+    icons = PlanetsLib.technology_icon_constant_planet("__planet-ithurice__/graphics/planet-ithurice.png", 512),
     icon_size = 512,
     essential = true,
     localised_description = {"space-location-description.ithurice"},

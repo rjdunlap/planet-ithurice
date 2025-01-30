@@ -1,12 +1,12 @@
 {
     "name": "planet-ithurice",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "title": "Planet Ithurice",
     "author": "rjdunlap",
     "factorio_version": "2.0",
     "dependencies": ["base >= 2.0.28",
       "space-age",
       "any-planet-start >= 1.1.7",
-      "PlanetsLib"],
+      "PlanetsLib >= 1.1.38"],
     "description": "This mod adds in a new planet Ithurice"
   }
