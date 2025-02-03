@@ -12,12 +12,12 @@ local merge = require("lib").merge
 
 data:extend({
 	merge(data.raw.resource["scrap"], {
-		name = "ithurice-scrap",
+		name = "xithurice-scrap",
 		icon_size = 64,
-		order = "w-a[ithurice-scrap]",
+		order = "w-a[xithurice-scrap]",
 		minable = merge(data.raw.resource["scrap"].minable, {
 			mining_time = 0.50,
-			result = "ithurice-scrap",
+			result = "xithurice-scrap",
 		}),
 		map_color = { 0.77, 0.55, 0.55 },
 		map_grid = true,
@@ -26,7 +26,7 @@ data:extend({
 
 data:extend{{
     type = "item",
-    name = "ithurice-scrap",
+    name = "xithurice-scrap",
     icon = "__space-age__/graphics/icons/scrap.png",
     pictures =
     {
@@ -38,7 +38,7 @@ data:extend{{
       { size = 64, filename = "__space-age__/graphics/icons/scrap-5.png", scale = 0.5, mipmap_count = 4 }
     },
     subgroup = "fulgora-processes",
-    order = "a[ithurice-scrap]-a[ithurice-scrap]",
+    order = "a[xithurice-scrap]-a[xithurice-scrap]",
     inventory_move_sound = item_sounds.resource_inventory_move,
     pick_sound = item_sounds.resource_inventory_pickup,
     drop_sound = item_sounds.resource_inventory_move,
@@ -59,7 +59,7 @@ end
 data:extend{
 {
     type = "recipe",
-    name = "ithurice-scrap-recycling",
+    name = "xithurice-scrap-recycling",
     icons = {
       {
         icon = "__quality__/graphics/icons/recycling.png"
@@ -78,7 +78,7 @@ data:extend{
     enabled = false,
     auto_recycle = false,
     energy_required = 0.6,
-    ingredients = {{type = "item", name = "ithurice-scrap", amount = 1}},
+    ingredients = {{type = "item", name = "xithurice-scrap", amount = 1}},
     results =
     {
       {type = "item", name = "ice",                       amount = 1, probability = 0.30, show_details_in_recipe_tooltip = false},

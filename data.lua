@@ -143,7 +143,7 @@ function MapGen_Ithurice()
 
         ["lithium-iceberg-huge"] = {},
         ["lithium-iceberg-big"] = {},
-        ["ithurice-scrap"] = {},
+        ["xithurice-scrap"] = {},
         ["fulgoran-ruin-vault"] = { },
         ["fulgoran-ruin-attractor"] = { },
         ["fulgoran-ruin-colossal"] = { },
@@ -464,7 +464,7 @@ data:extend {{
         },
         {
             type = "unlock-recipe",
-            recipe = "ithurice-scrap-recycling",
+            recipe = "xithurice-scrap-recycling",
         },
         {
           type = "unlock-recipe",
