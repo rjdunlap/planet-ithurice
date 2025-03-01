@@ -5,6 +5,8 @@ local simulations = require("__space-age__.prototypes.factoriopedia-simulations"
 local item_sounds = require("__base__.prototypes.item_sounds")
 
 utils.remove_tech("recycling", true, true)
+utils.set_prerequisites("holmium-processing", nil)
+utils.set_prerequisites("lithium-processing", nil)
 
 local merge = require("lib").merge
 
