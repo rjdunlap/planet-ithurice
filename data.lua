@@ -501,4 +501,7 @@ data:extend {{
 }}
 
 
-APS.add_planet{name = "ithurice", filename = "__planet-ithurice__/ithurice.lua", technology = "planet-discovery-ithurice"}
+-- Any Planet Start is optional.
+if mods["any-planet-start"] then
+    APS.add_planet{name = "ithurice", filename = "__planet-ithurice__/start.lua", technology = "planet-discovery-ithurice"}
+end
