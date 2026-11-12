@@ -64,17 +64,17 @@ data:extend{
     name = "xithurice-scrap-recycling",
     icons = {
       {
-        icon = "__quality__/graphics/icons/recycling.png"
+        icon = "__recycler__/graphics/icons/recycling.png"
       },
       {
         icon = "__space-age__/graphics/icons/scrap.png",
         scale = 0.4
       },
       {
-        icon = "__quality__/graphics/icons/recycling-top.png"
+        icon = "__recycler__/graphics/icons/recycling-top.png"
       }
     },
-    category = "recycling-or-hand-crafting",
+    categories = {"recycling", "hand-crafting"},
     subgroup = "fulgora-processes",
     order = "a[trash]-a[trash-recycling]",
     enabled = false,
@@ -83,18 +83,27 @@ data:extend{
     ingredients = {{type = "item", name = "xithurice-scrap", amount = 1}},
     results =
     {
-      {type = "item", name = "ice",                       amount = 1, probability = 0.30, show_details_in_recipe_tooltip = false},
-      {type = "item", name = "scrap",                     amount = 1, probability = 0.20, show_details_in_recipe_tooltip = false},
-      {type = "item", name = "crude-oil-barrel",          amount = 1, probability = 0.05, show_details_in_recipe_tooltip = false},
-      {type = "item", name = "coal",                      amount = 1, probability = 0.03, show_details_in_recipe_tooltip = false},
-      {type = "item", name = "fluorine-barrel",           amount = 1, probability = 0.02, show_details_in_recipe_tooltip = false},
-      {type = "item", name = "lithium-brine-barrel",      amount = 1, probability = 0.02, show_details_in_recipe_tooltip = false},
-      {type = "item", name = "ice-platform",              amount = 1, probability = 0.02, show_details_in_recipe_tooltip = false},
-      {type = "item", name = "holmium-ore",               amount = 1, probability = 0.02, show_details_in_recipe_tooltip = false},
-      {type = "item", name = "burner-mining-drill",       amount = 1, probability = 0.02, show_details_in_recipe_tooltip = false},
-      {type = "item", name = "copper-cable",              amount = 1, probability = 0.02, show_details_in_recipe_tooltip = false},
-      {type = "item", name = "lithium",                   amount = 1, probability = 0.01, show_details_in_recipe_tooltip = false},
-      {type = "item", name = "wood",                      amount = 1, probability = 0.01, show_details_in_recipe_tooltip = false},
+      {type = "item", name = "ice",                       amount = 1, independent_probability = 0.30, show_details_in_recipe_tooltip = false},
+      {type = "item", name = "scrap",                     amount = 1, independent_probability = 0.20, show_details_in_recipe_tooltip = false},
+      {type = "item", name = "crude-oil-barrel",          amount = 1, independent_probability = 0.05, show_details_in_recipe_tooltip = false},
+      {type = "item", name = "coal",                      amount = 1, independent_probability = 0.03, show_details_in_recipe_tooltip = false},
+      {type = "item", name = "fluorine-barrel",           amount = 1, independent_probability = 0.02, show_details_in_recipe_tooltip = false},
+      {type = "item", name = "lithium-brine-barrel",      amount = 1, independent_probability = 0.02, show_details_in_recipe_tooltip = false},
+      {type = "item", name = "ice-platform",              amount = 1, independent_probability = 0.02, show_details_in_recipe_tooltip = false},
+      {type = "item", name = "holmium-ore",               amount = 1, independent_probability = 0.02, show_details_in_recipe_tooltip = false},
+      {type = "item", name = "burner-mining-drill",       amount = 1, independent_probability = 0.02, show_details_in_recipe_tooltip = false},
+      {type = "item", name = "copper-cable",              amount = 1, independent_probability = 0.02, show_details_in_recipe_tooltip = false},
+      {type = "item", name = "lithium",                   amount = 1, independent_probability = 0.01, show_details_in_recipe_tooltip = false},
+      {type = "item", name = "wood",                      amount = 1, independent_probability = 0.01, show_details_in_recipe_tooltip = false},
     }
   }
 }
+
+-- Let the vanilla "Scrap recycling productivity" research apply to this scrap recipe as well.
+do
+  local tech = data.raw.technology["scrap-recycling-productivity"]
+  if tech and data.raw.recipe["xithurice-scrap-recycling"] then
+    tech.effects = tech.effects or {}
+    table.insert(tech.effects, {type = "change-recipe-productivity", recipe = "xithurice-scrap-recycling", change = 0.1})
+  end
+end

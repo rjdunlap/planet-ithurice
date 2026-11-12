@@ -130,7 +130,8 @@ function MapGen_Ithurice()
         ["snow-drift-decal"] = {},
 
         ["fulgoran-ruin-tiny"] = {},
-        ["fulgoran-gravewort"] = {},
+        ["small-fulgoran-gravewort"] = {},
+        ["medium-fulgoran-gravewort"] = {},
         ["urchin-cactus"] = {},
         ["medium-fulgora-rock"] = {},
         ["small-fulgora-rock"] = {},
